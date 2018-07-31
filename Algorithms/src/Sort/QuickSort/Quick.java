@@ -28,15 +28,14 @@ public class Quick {
         {
             while (Shell.less(a[++i], v))
             {
-                if (i == hi)
+                if (i >= hi)
                 {
                     break;
                 }
             }
-
             while (Shell.less(v, a[--j]))
             {
-                if (j == lo)
+                if (j <= lo)
                 {
                     break;
                 }
@@ -51,7 +50,6 @@ public class Quick {
         }
 
         Shell.exch(a, lo, j);
-
 
         return j;
     }
