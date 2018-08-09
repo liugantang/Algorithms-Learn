@@ -20,7 +20,7 @@ public class SequentialSearchSTTest {
             i++;
         }
 
-        System.out.println(st.get("Key"));
+        System.out.println(st.keys());
 
     }
 }

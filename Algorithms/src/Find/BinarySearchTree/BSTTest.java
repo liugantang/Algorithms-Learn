@@ -6,24 +6,33 @@ import java.util.Scanner;
 
 public class BSTTest {
     public static void main(String[] args) throws FileNotFoundException {
-        BST<String, Integer> bst = new BST();
+        BST<Integer, Integer> bst = new BST();
 
         File file = new File("/home/liugantang/IdeaProjects/Algorithms/src/Find/BinarySearchTree/test.txt");
         Scanner input = new Scanner(file);
 
         while (input.hasNext())
         {
-            String key = input.next();
-            String value = input.next();
-            bst.put(key, Integer.parseInt(value));
+            int key = input.nextInt();
+            int value = input.nextInt();
+            bst.put(key, value);
         }
 
         Scanner search = new Scanner(System.in);
-        String searchOrder;
-        while (!search.equals("end"))
+        int searchOrder = 0;
+        while (searchOrder != -1)
         {
-            searchOrder = search.next();
-            System.out.println(bst.get(searchOrder));
+            searchOrder = search.nextInt();
+            System.out.println(bst.keys());
+        }
+
+        System.out.println("Enter rank num");
+
+        searchOrder = 0;
+        while (searchOrder != -1)
+        {
+            searchOrder = search.nextInt();
+            System.out.println(bst.rank(searchOrder));
         }
     }
 }

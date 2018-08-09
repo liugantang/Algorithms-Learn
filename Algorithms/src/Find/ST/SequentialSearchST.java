@@ -1,5 +1,8 @@
 package Find.ST;
 
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class SequentialSearchST <Key extends Comparable<Key>, Value extends Comparable<Value>>{
     private class Node
     {
@@ -72,5 +75,15 @@ public class SequentialSearchST <Key extends Comparable<Key>, Value extends Comp
         return size;
     }
 
+    public Iterable<Key> keys()
+    {
+        Queue<Key> queue = new LinkedBlockingQueue<>();
+        for (Node x = first; x != null; x=x.next)
+        {
+            queue.add(x.key);
 
+        }
+
+        return queue;
+    }
 }
