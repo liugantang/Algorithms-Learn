@@ -9,12 +9,13 @@ public class MSTTest {
         File doc = new File("/home/liugantang/IdeaProjects/Algorithms/src/Graph/MinTree/tinyEWG.txt");
         Scanner input = new Scanner(doc);
         EdgeWeightGraph G = new EdgeWeightGraph(input);
-
-        MST mst = new MST(G);
-        for (Edge e : mst.edges())
+        //PrimMST lazyPrimMst = new PrimMST(G);
+        KruskalMST lazyPrimMst = new KruskalMST(G);
+        //LazyPrimMST lazyPrimMst = new LazyPrimMST(G);
+        for (Edge e : lazyPrimMst.edges())
         {
             System.out.println(e);
         }
-        System.out.println(mst.weight());
+        System.out.println(lazyPrimMst.weight());
     }
 }
